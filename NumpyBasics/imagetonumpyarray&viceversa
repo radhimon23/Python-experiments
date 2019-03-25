@@ -1,0 +1,43 @@
+Last login: Wed Jan 16 17:26:47 on ttys002
+Radhikas-MacBook-Pro:~ radhikamonpara$ pip3 install opencv-python
+Requirement already satisfied: opencv-python in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (4.0.0.21)
+Requirement already satisfied: numpy>=1.14.5 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from opencv-python) (1.16.0)
+You are using pip version 10.0.1, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Radhikas-MacBook-Pro:~ radhikamonpara$ import cv2
+-bash: import: command not found
+Radhikas-MacBook-Pro:~ radhikamonpara$ python3
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) 
+[Clang 6.0 (clang-600.0.57)] on darwin
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import cv2
+>>> img=cv2.imread("smallgray.png",1)
+>>> img
+array([[[187, 187, 187],
+        [158, 158, 158],
+        [104, 104, 104],
+        [121, 121, 121],
+        [143, 143, 143]],
+
+       [[198, 198, 198],
+        [125, 125, 125],
+        [255, 255, 255],
+        [255, 255, 255],
+        [147, 147, 147]],
+
+       [[209, 209, 209],
+        [134, 134, 134],
+        [255, 255, 255],
+        [ 97,  97,  97],
+        [182, 182, 182]]], dtype=uint8)
+>>> img=cv2.imread("smallgray.png",0)
+>>> 
+>>> img=cv2.imread("smallgray.png",0)
+>>> img
+array([[187, 158, 104, 121, 143],
+       [198, 125, 255, 255, 147],
+       [209, 134, 255,  97, 182]], dtype=uint8)
+>>> 
+>>> cv2.imwrite("newsmallgray.png",img)
+True
+>>> 

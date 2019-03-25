@@ -1,0 +1,106 @@
+Last login: Tue Jan 15 14:42:08 on ttys002
+Radhikas-MacBook-Pro:~ radhikamonpara$ pip3 install ipython
+Requirement already satisfied: ipython in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (7.2.0)
+Requirement already satisfied: prompt-toolkit<2.1.0,>=2.0.0 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (2.0.7)
+Requirement already satisfied: pickleshare in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (0.7.5)
+Requirement already satisfied: pygments in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (2.3.1)
+Requirement already satisfied: traitlets>=4.2 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (4.3.2)
+Requirement already satisfied: backcall in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (0.1.0)
+Requirement already satisfied: setuptools>=18.5 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (39.0.1)
+Requirement already satisfied: decorator in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (4.3.0)
+Requirement already satisfied: pexpect; sys_platform != "win32" in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (4.6.0)
+Requirement already satisfied: appnope; sys_platform == "darwin" in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (0.1.0)
+Requirement already satisfied: jedi>=0.10 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from ipython) (0.13.2)
+Requirement already satisfied: wcwidth in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from prompt-toolkit<2.1.0,>=2.0.0->ipython) (0.1.7)
+Requirement already satisfied: six>=1.9.0 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from prompt-toolkit<2.1.0,>=2.0.0->ipython) (1.12.0)
+Requirement already satisfied: ipython-genutils in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from traitlets>=4.2->ipython) (0.2.0)
+Requirement already satisfied: ptyprocess>=0.5 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from pexpect; sys_platform != "win32"->ipython) (0.6.0)
+Requirement already satisfied: parso>=0.3.0 in /Library/Frameworks/Python.framework/Versions/3.7/lib/python3.7/site-packages (from jedi>=0.10->ipython) (0.3.1)
+You are using pip version 10.0.1, however version 18.1 is available.
+You should consider upgrading via the 'pip install --upgrade pip' command.
+Radhikas-MacBook-Pro:~ radhikamonpara$ ipython
+Python 3.7.1 (v3.7.1:260ec2c36a, Oct 20 2018, 03:13:28) 
+Type 'copyright', 'credits' or 'license' for more information
+IPython 7.2.0 -- An enhanced Interactive Python. Type '?' for help.
+
+In [1]: import pandas                                                           
+
+In [2]: df1 = pandas.DataFrame([2,4,6],[10,20,30])                              
+
+In [3]: df1                                                                     
+Out[3]: 
+    0
+10  2
+20  4
+30  6
+
+In [4]: df1 = pandas.DataFrame([[2,4,6],[10,20,30]])                            
+
+In [5]: df1                                                                     
+Out[5]: 
+    0   1   2
+0   2   4   6
+1  10  20  30
+
+In [6]: df1 = pandas.DataFrame([[2,4,6],[10,20,30]],columns=["","",""])         
+
+In [7]: df1 = pandas.DataFrame([[2,4,6],[10,20,30]],columns=["Price","Age","Valu
+   ...: e"])                                                                    
+
+In [8]: df1                                                                     
+Out[8]: 
+   Price  Age  Value
+0      2    4      6
+1     10   20     30
+
+In [9]: df1 = pandas.DataFrame([[2,4,6],[10,20,30]],columns=["Price","Age","Valu
+   ...: e"],index=["First","Second"])                                           
+
+In [10]: df1                                                                    
+Out[10]: 
+        Price  Age  Value
+First       2    4      6
+Second     10   20     30
+
+In [11]: df2 = pandas.DataFrame([{"Name",},{}])                                 
+
+In [12]: df2 = pandas.DataFrame([{"Name":"John"},{"Name":"Jack"}])              
+
+In [13]: df2                                                                    
+Out[13]: 
+   Name
+0  John
+1  Jack
+
+In [14]: df2 = pandas.DataFrame([{"Name":"John","Surname":"Monpara"},{"Name":"Ja
+    ...: ck"}])                                                                 
+
+In [15]: df2                                                                    
+Out[15]: 
+   Name  Surname
+0  John  Monpara
+1  Jack      NaN
+
+In [16]: df1                                                                    
+Out[16]: 
+        Price  Age  Value
+First       2    4      6
+Second     10   20     30
+
+In [17]: type(df1)                                                              
+Out[17]: pandas.core.frame.DataFrame
+
+In [18]: df1.mean()                                                             
+Out[18]: 
+Price     6.0
+Age      12.0
+Value    18.0
+dtype: float64
+
+In [19]: df1.mean().mean()                                                      
+Out[19]: 12.0
+
+In [20]: df1.Price.max()                                                        
+Out[20]: 10
+
+In [21]:                                                                        
